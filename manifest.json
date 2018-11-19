@@ -1,0 +1,26 @@
+{ 
+  "description": "Check analytics tags for all links and input tags",
+  "manifest_version": 2,
+  "name": "Check-Analytics-Tags",
+  "version": "1.0",
+  "icons": {
+    "48": "icons/Owl.svg"
+  },
+  "browser_action": {
+    "default_icon": "icons/Owl.svg",
+    "default_title": "Check Tags"
+  },
+  "background": {
+    "scripts": ["bg-scripts/bg.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/jquery-3.3.1.js","scripts/check.js"]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ]
+}
